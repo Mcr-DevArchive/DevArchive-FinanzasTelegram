@@ -20,14 +20,10 @@ Ideal para control de gastos compartidos, parejas, familias o proyectos personal
 - [Instalación](#-instalación)
 - [Uso](#-uso)
 - [Configuración](#-configuración)
-- [Ejemplo de datos y salida](#-ejemplo-de-datos-y-salida)
-- [Estructura del código](#-estructura-del-código)
 - [Triggers](#-triggers)
 - [Personalización](#-personalización)
 - [Solución de problemas](#-solución-de-problemas)
-- [Contribuciones](#-contribuciones)
-- [Licencia](#-licencia)
-- [Contacto](#-contacto)
+
 
 ---
 
@@ -104,3 +100,74 @@ Edita la sección `CONFIG`:
 ```javascript
 const TELEGRAM_TOKEN = "TU_BOT_TOKEN";
 const TELEGRAM_CHAT_ID = "TU_CHAT_ID";
+```
+---
+### 3️⃣ Uso
+
+Cada mes debe existir una hoja con nombre:
+
+Enero, Febrero, Marzo, etc.
+
+El script detecta automáticamente el mes actual.
+
+El resumen se envía sin intervención manual.
+
+🧪 Ejecución manual (modo test)
+
+```javascript
+testSendNow();
+```
+
+
+Envía el resumen del mes activo inmediatamente (útil para pruebas).
+
+---
+⚙️ Configuración
+
+Variables relevantes:
+
+| Variable | Descripción |
+|---------|-------------|
+| TELEGRAM_TOKEN | Token del bot de Telegram |
+| TELEGRAM_CHAT_ID | ID del chat destino |
+| PERSON_1_NAME | Nombre visible persona 1 |
+| PERSON_2_NAME | Nombre visible persona 2 |
+| LABELS | Categorías del resumen |
+| OUT_KEYS | Categorías consideradas como salidas |
+
+
+🧠 Estructura del código
+
+Funciones principales:
+
+| Función | Descripción |
+|--------|-------------|
+| monthlyTelegramSummaryIfNeeded | Lógica principal + validación de fecha |
+| readCashflowSummary | Lectura del resumen por categorías |
+| readAlertsFixedRanges | Detección de tributos y seguros |
+| buildMessage | Construcción del mensaje Markdown |
+| sendTelegram | Envío vía Telegram API |
+| toNumber | Normalización de importes |
+| resolveSheetNameForMonth | Resolución del nombre de la hoja |
+
+---
+⏱️ Triggers (Disparadores automáticos)
+
+El script utiliza un trigger basado en tiempo.
+
+Configuración recomendada
+
+Configura un disparador diario.
+El script solo enviará el mensaje cuando falten exactamente 5 días para finalizar el mes.
+
+| Opción | Valor |
+|-------|-------|
+| Función | monthlyTelegramSummaryIfNeeded |
+| Despliegue | Principal |
+| Fuente del evento | Según tiempo |
+| Tipo | Diario |
+| Hora | 09:00 – 10:00 (GMT+01:00) |
+| Notificación de errores | Notifícame cada día |
+
+
+
