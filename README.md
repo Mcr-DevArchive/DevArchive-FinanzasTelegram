@@ -169,5 +169,53 @@ El script solo enviará el mensaje cuando falten exactamente 5 días para finali
 | Hora | 09:00 – 10:00 (GMT+01:00) |
 | Notificación de errores | Notifícame cada día |
 
+🧠 El contexto real
+
+Imaginemos un caso muy común: dos personas que comparten gastos, por ejemplo Señor X y Señora X.
+
+Ambos tienen:
+
+🟢 Ingresos recurrentes (nóminas)
+
+🟢 Gastos mensuales habituales (hipoteca, luz, suscripciones…)
+
+🟢  Ahorros planificados
+
+Y gastos no recurrentes, que suelen romper el equilibrio:
+
+🔹 Tributos (IBI, IVTM, tasa de basuras)
+
+🔹Seguros anuales (coche, vida, etc.)
+
+| DESCRIPCIÓN | CATEGORÍA | TIPO | MONEDA | CANTIDAD | PERSONA | Recurrente |
+|------------|-----------|------|--------|----------|---------|------------|
+| Ingreso Nómina | Ingreso | Nómina - Señor X | € | 1,500.00 | Señor X | Sí |
+| Ingreso Nómina | Ingreso | Nómina - Señora X | € | 1,500.00 | Señora X | Sí |
+| ticket restaurante edenred | Ingreso | ticket restaurante edenred | € | 160.00 | Señor X | Sí |
+| Hipoteca | Facturas | Hipoteca | € | 400.00 | Señora X | Sí |
+| Hipoteca | Facturas | Hipoteca | € | 400.00 | Señor X | Sí |
+| Luz | Facturas | Electricidad | € | 50.00 | Señor X | Sí |
+| Comunidad | Facturas | Comunidad | € | 30.00 | Señor X | Sí |
+| Spotify | Suscripciones | Spotify | € | 16.99 | Señor X | Sí |
+| Netflix | Suscripciones | Netflix | € | 13,99 | Señor X | Sí |
+| Amazon | Suscripciones | Amazon | € | 4,99 | Señor X | Sí |
+| Fondo de Emergencia | Ahorros | Fondo de Emergencia | € | 50.00 | Señor X | Sí |
+| Fondo de Emergencia | Ahorros | Fondo de Emergencia | € | 50.00 | Señora X | Sí |
+| Fondo de vacaciones | Ahorros | Fondo de vacaciones | € | 100.00 | Señor X | Sí |
+| Fondo de vacaciones | Ahorros | Fondo de vacaciones | € | 100.00 | Señora X | Sí |
+| Factura agua | Facturas | Agua | € | 30.00 | Señor X | Sí |
+| Factura - Móvil | Facturas | Móvil | € | 20.00 | Señora X | Sí |
+| Factura - Móvil | Facturas | Móvil | € | 20.00 | Señor X | Sí |
+| Master | Deudas | Préstamo Máster | € | 250.00 | Señor X | Sí |
+| Seguro Coche | Facturas | Seguro Coche | € | 350.00 | Señora X | No |
+| ticket restaurante edenred | Gastos | Salir a comer fuera | € | 160.00 | Señor X | Sí |
+| Seguro de vida | Facturas | Seguro de vida | € | 30.00 | Señor X | Sí |
+| Peluquero | Gastos | Belleza | € | 16.00 | Señor X | Sí |
+| nailstetic | Gastos | Belleza | € | 60.00 | Señora X | Sí |
+| Impuesto sobre Bienes Inmuebles | Tributos | I.B.I | € | 170.00 | Señor X | No |
+| IVTM | Tributos | IVTM | € | 62.00 | Señor X | No |
+| Tasa recogida de basuras | Tributos | Tasa recogida basuras | € | 30.00 | Señor X | No |
+
+
 
 
